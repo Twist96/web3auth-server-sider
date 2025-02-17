@@ -84,4 +84,8 @@ export class AuthService {
   static generateToken(user: any) {
     return sign(user, "some-random-string");
   }
+
+  static getUsers() {
+    return users;
+  }
 }
