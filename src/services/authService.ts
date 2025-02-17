@@ -63,9 +63,6 @@ export class AuthService {
       .find((x: { type: string }) => x.type === "web3auth_app_key")
       .public_key.toLowerCase();
 
-    console.log({ pubkey });
-    console.log({ app_pub_key });
-
     if (
       (jwtDecoded.payload as any).wallets
         .find((x: { type: string }) => x.type === "web3auth_app_key")

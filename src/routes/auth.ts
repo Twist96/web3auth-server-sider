@@ -11,7 +11,6 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Token is required" });
     }
 
-    // console.log({ token, pubkey });
     const isValid = await AuthService.verifyToken(token, pubkey);
     if (!isValid) {
       return res.status(401).json({ message: "Invalid JWT token" });
